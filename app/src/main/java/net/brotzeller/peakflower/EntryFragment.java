@@ -35,6 +35,7 @@ public class EntryFragment extends Fragment {
     }
 
     @Override
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_entry, container, false);
@@ -52,10 +53,7 @@ public class EntryFragment extends Fragment {
                 Snackbar.make(view, "You clicked save", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
                 ViewPager foo = (ViewPager) getView().getParent();
-                FragmentPagerAdapter bar = (FragmentPagerAdapter) foo.getAdapter();
-                bar.setPrimaryItem(con, 1, bar.getItem(1));
-
-                bar.notifyDataSetChanged();
+                foo.setCurrentItem(SectionsPagerAdapter.PAGE_DISPLAY);
             }
         });
         /*
