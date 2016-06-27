@@ -1,0 +1,67 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="net.brotzeller.peakflower.DisplayFragment">
+
+    <TextView
+        android:id="@+id/best_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bester Wert"
+        android:gravity="center_horizontal"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="850"
+        android:id="@+id/best_view"
+        android:gravity="center_horizontal"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_below="@id/best_label"
+        />
+    <TextView
+        android:id="@+id/current_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tageswert"
+        android:gravity="center_horizontal"
+        android:layout_below="@id/best_view"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="600"
+        android:id="@+id/current_view"
+        android:gravity="center_horizontal"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_below="@id/current_label"
+
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="85%"
+        android:id="@+id/percentage"
+        android:gravity="center_vertical|center_horizontal"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:layout_below="@id/current_view"
+
+        />
+
+
+</RelativeLayout>
