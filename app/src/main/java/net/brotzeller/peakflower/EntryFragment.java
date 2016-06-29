@@ -14,6 +14,7 @@ import android.widget.TextView;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class EntryFragment extends Fragment {
 
@@ -40,8 +41,10 @@ public class EntryFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_entry, container, false);
         TextView time = (TextView) rootView.findViewById(R.id.time_entry);
+        final TextView flow = (TextView) rootView.findViewById(R.id.flow_entry);
         DateFormat df = new SimpleDateFormat("EEE, d MMM yyyy, HH:mm");
-        String date = df.format(Calendar.getInstance().getTime());
+        final Date theDate = Calendar.getInstance().getTime();
+        String date = df.format(theDate);
         time.setText(date);
         final ViewGroup con = container;
         //TextView textView = (TextView) rootView.findViewById(R.id.time_label);
@@ -50,8 +53,14 @@ public class EntryFragment extends Fragment {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "You clicked save", Snackbar.LENGTH_LONG)
+                int entry = Integer.parseInt(flow.getText().toString());
+                Snackbar.make(view, "You clicked save after entering "+entry, Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+
+                EntryActivity a = (EntryActivity) getActivity();
+                MeterStorage m = a.getMeterStorage();
+                m.insertMeasurement(entry, theDate);
+
                 ViewPager foo = (ViewPager) getView().getParent();
                 foo.setCurrentItem(SectionsPagerAdapter.PAGE_DISPLAY);
             }

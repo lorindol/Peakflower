@@ -30,6 +30,7 @@ public class EntryActivity extends AppCompatActivity {
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
     private SectionsPagerAdapter mSectionsPagerAdapter;
+    private MeterStorage meterStorage;
 
     /**
      * The {@link ViewPager} that will host the section contents.
@@ -55,6 +56,7 @@ public class EntryActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(mViewPager);
 
 
+        meterStorage = new MeterStorage();
         /*
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -89,6 +91,10 @@ public class EntryActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public MeterStorage getMeterStorage() {
+        return meterStorage;
     }
 
 }
