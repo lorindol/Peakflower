@@ -3,4 +3,9 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="percentGood">#84da84</color>
+    <color name="percentOkay">#ffea4a</color>
+    <color name="percentBad">#a33e2f</color>
+    <color name="percentNone">#ffffff</color>
 </resources>

@@ -65,9 +65,20 @@ public class DisplayFragment extends Fragment {
 
         TextView percent = (TextView) view.findViewById(R.id.percentage);
         String percentString = "---%";
+        float percentage = 0;
         if (max > 0) {
-            percentString = String.format("%.2f%%", (float) currentValue / (float) max * 100);
+            percentage = (float) currentValue / (float) max * 100;
+            percentString = String.format("%.2f%%", percentage);
         }
         percent.setText(percentString);
+        if (percentage >= 80) {
+            percent.setBackgroundColor(getResources().getColor(R.color.percentGood));
+        } else if (percentage >= 50) {
+            percent.setBackgroundColor(getResources().getColor(R.color.percentOkay));
+        } else if (percentage == 0) {
+            percent.setBackgroundColor(getResources().getColor(R.color.percentNone));
+        } else {
+            percent.setBackgroundColor(getResources().getColor(R.color.percentBad));
+        }
     }
 }
