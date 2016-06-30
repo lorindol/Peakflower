@@ -89,7 +89,14 @@ public class EntryActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {
             return true;
         }
+        if (id == R.id.settings_clear_data) {
+            mViewPager = (ViewPager) findViewById(R.id.container);
+            Snackbar.make(mViewPager, "You clicked delete", Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show();
 
+            meterStorage.clearStorage();
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 

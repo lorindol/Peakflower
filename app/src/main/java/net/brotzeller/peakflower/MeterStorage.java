@@ -57,4 +57,8 @@ public class MeterStorage {
         return data.get(data.size()-1).getFlow();
     }
 
+    public void clearStorage() {
+        data.clear();
+        maxFlow = 0;
+    }
 }
