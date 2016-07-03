@@ -78,4 +78,10 @@ public class EntryFragment extends Fragment {
 
         return rootView;
     }
+
+    public void clearData() {
+        View view = getView();
+        TextView flow = (TextView) view.findViewById(R.id.flow_entry);
+        flow.setText("");
+    }
 }

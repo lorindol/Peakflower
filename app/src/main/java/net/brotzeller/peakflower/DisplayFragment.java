@@ -48,8 +48,11 @@ public class DisplayFragment extends Fragment {
             updateVariables(getView());
         }
     }
-    private void updateVariables(View view) {
+    public void updateVariables(View view) {
 
+        if (null == view) {
+            view = getView();
+        }
         TextView best = (TextView) view.findViewById(R.id.best_view);
 
         EntryActivity a = (EntryActivity) getActivity();

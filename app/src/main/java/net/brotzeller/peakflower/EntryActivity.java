@@ -95,6 +95,7 @@ public class EntryActivity extends AppCompatActivity {
                     .setAction("Action", null).show();
 
             meterStorage.clearStorage();
+            mSectionsPagerAdapter.updateData();
             return true;
         }
         return super.onOptionsItemSelected(item);

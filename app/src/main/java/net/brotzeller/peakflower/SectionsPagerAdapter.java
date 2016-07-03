@@ -3,6 +3,7 @@ package net.brotzeller.peakflower;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.view.View;
 
 /**
  * Created by martin on 14.06.16.
@@ -11,6 +12,10 @@ public class SectionsPagerAdapter  extends FragmentPagerAdapter {
     static final int PAGE_ENTRY    = 0;
     static final int PAGE_DISPLAY  = 1;
     static final int PAGE_ANALYSIS = 2;
+
+    EntryFragment ef;
+    DisplayFragment df;
+    AnalysisFragment af;
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
@@ -27,14 +32,17 @@ public class SectionsPagerAdapter  extends FragmentPagerAdapter {
         Fragment fragment;
         switch (position) {
             case PAGE_ENTRY:
-                fragment =  EntryFragment.newInstance(position + 1);
+                ef = EntryFragment.newInstance(position + 1);
+                fragment = ef;
                 break;
             case PAGE_DISPLAY:
-                fragment = DisplayFragment.newInstance(position + 1);
+                df = DisplayFragment.newInstance(position + 1);
+                fragment = df;
                 break;
             case PAGE_ANALYSIS:
             default:
-                fragment = AnalysisFragment.newInstance(position + 1);
+                af = AnalysisFragment.newInstance(position + 1);
+                fragment = af;
                 break;
         }
         return fragment;
@@ -57,6 +65,15 @@ public class SectionsPagerAdapter  extends FragmentPagerAdapter {
                 return "Auswertung";
         }
         return null;
+    }
+
+    public void updateData() {
+        if (null != ef) {
+            ef.clearData();
+        }
+        if (null != df) {
+            df.updateVariables(null);
+        }
     }
 
 }
