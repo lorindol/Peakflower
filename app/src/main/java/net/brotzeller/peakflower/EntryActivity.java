@@ -1,5 +1,6 @@
 package net.brotzeller.peakflower;
 
+import android.content.SharedPreferences;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -56,7 +57,8 @@ public class EntryActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(mViewPager);
 
 
-        meterStorage = new MeterStorage();
+        SharedPreferences prefs = this.getPreferences(MODE_PRIVATE);
+        meterStorage = new MeterStorage(prefs);
         /*
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

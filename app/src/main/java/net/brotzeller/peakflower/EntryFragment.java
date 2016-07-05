@@ -5,6 +5,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -63,6 +64,7 @@ public class EntryFragment extends Fragment {
 
                 ViewPager foo = (ViewPager) getView().getParent();
                 foo.setCurrentItem(SectionsPagerAdapter.PAGE_DISPLAY);
+                Log.e("Entry", "Storage: "+m.serialize());
             }
         });
         /*
