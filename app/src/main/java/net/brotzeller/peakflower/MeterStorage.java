@@ -84,6 +84,9 @@ public class MeterStorage {
         }
         return data.get(data.size()-1).getFlow();
     }
+    public ArrayList<DataPoint> getData() {
+        return data;
+    }
 
     public void clearStorage() {
         data.clear();
