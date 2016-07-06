@@ -60,8 +60,9 @@
         android:paddingTop="5dp"
         android:paddingBottom="5dp"
         android:layout_below="@id/current_view"
-        android:background="@color/percentNone"
-        android:textSize="@dimen/percentSize" />
+        android:background="@color/percentGood"
+        android:textSize="@dimen/percentSize"
+        android:layout_marginBottom="60dp" />
 
 
 </RelativeLayout>
