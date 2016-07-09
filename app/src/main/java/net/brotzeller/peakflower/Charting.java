@@ -76,7 +76,7 @@ public class Charting {
         xAxis.setGranularity(3600000L); // one Hour
         xAxis.setValueFormatter(new AxisValueFormatter() {
 
-            private FormattedStringCache.Generic<Long, Date> mFormattedStringCache = new FormattedStringCache.Generic<>(new SimpleDateFormat("d.m. HH:mm"));
+            private FormattedStringCache.Generic<Long, Date> mFormattedStringCache = new FormattedStringCache.Generic<>(new SimpleDateFormat("d.M. HH:mm"));
 
             @Override
             public String getFormattedValue(float value, AxisBase axis) {
@@ -138,10 +138,10 @@ public class Charting {
     private void drawLimits(int max, YAxis leftAxis) {
         float upper = (float) max * 0.8f;
         float lower = (float) max * 0.5f;
-        LimitLine ll1 = new LimitLine(upper, "Dosierung Einhalten");
+        LimitLine ll1 = new LimitLine(upper, "Dosierung anpassen");
         ll1.setLineWidth(4f);
         ll1.enableDashedLine(10f, 10f, 0f);
-        ll1.setLabelPosition(LimitLine.LimitLabelPosition.RIGHT_TOP);
+        ll1.setLabelPosition(LimitLine.LimitLabelPosition.RIGHT_BOTTOM);
         ll1.setTextSize(10f);
         //ll1.setTypeface(tf);
 
